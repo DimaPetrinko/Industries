@@ -1,0 +1,16 @@
+{
+    "name": "Industries",
+    "rootNamespace": "Industries",
+    "references": [
+        "GUID:fd0541a998c1dd64f8fa7689fa88bc20"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
