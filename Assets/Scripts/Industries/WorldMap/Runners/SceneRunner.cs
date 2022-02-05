@@ -1,9 +1,9 @@
 ﻿using Core.ApplicationManagement.Runners;
-using Industries.ApplicationManagement.Installers;
+using Industries.WorldMap.Installers;
 
-namespace Industries.ApplicationManagement.Runners
+namespace Industries.WorldMap.Runners
 {
-	public class StartupSceneRunner : SceneRunner
+	public class SceneRunner : BaseSceneRunner
 	{
 		protected override void CreateInstallers()
 		{
