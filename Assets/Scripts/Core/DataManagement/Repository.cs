@@ -24,7 +24,9 @@ namespace Core.DataManagement
 
 		public T Get<T>() where T : class
 		{
-			return GetMany<T>().FirstOrDefault();
+			var result = GetMany<T>().FirstOrDefault();
+			if (result == null) Debug.LogWarning($"Could not find anything with type {typeof(T)}");
+			return result;
 		}
 
 		public IEnumerable<T> GetMany<T>() where T : class

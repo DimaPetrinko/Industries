@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace Core.ApplicationManagement.Runners
 {
-	public abstract class SceneRunner : MonoBehaviour
+	public abstract class BaseSceneRunner : MonoBehaviour
 	{
-		[SerializeField] private SettingsInstaller m_SettingsInstaller;
-		[SerializeField] private SceneInstaller m_SceneInstaller;
+		[SerializeField] private BaseSettingsInstaller m_SettingsInstaller;
+		[SerializeField] private BaseSceneInstaller m_SceneInstaller;
 
 		protected List<IInstaller> mInstallers;
 		private List<IService> mServices;
@@ -19,11 +19,11 @@ namespace Core.ApplicationManagement.Runners
 		{
 			mInstallers = new List<IInstaller>();
 
+			if (m_SettingsInstaller != null) mInstallers.Add(m_SettingsInstaller);
+			if (m_SceneInstaller != null) mInstallers.Add(m_SceneInstaller);
 			CreateInstallers();
 
-			m_SettingsInstaller.Install();
-			m_SceneInstaller.Install();
-			InstallOther();
+			Install();
 		}
 
 		private void Start()
@@ -35,12 +35,12 @@ namespace Core.ApplicationManagement.Runners
 		private void OnDestroy()
 		{
 			Stop();
-			UninstallOther();
+			Uninstall();
 		}
 
 		protected abstract void CreateInstallers();
 
-		private void InstallOther()
+		private void Install()
 		{
 			foreach (var installer in mInstallers)
 			{
@@ -48,7 +48,7 @@ namespace Core.ApplicationManagement.Runners
 			}
 		}
 
-		private void UninstallOther()
+		private void Uninstall()
 		{
 			foreach (var installer in mInstallers)
 			{
