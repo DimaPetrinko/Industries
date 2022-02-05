@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &328285814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 328285816}
+  - component: {fileID: 328285815}
+  m_Layer: 0
+  m_Name: WorldPresenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &328285815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328285814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d2414e8eb945f187bd17236ccebfed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpawnParent: {fileID: 328285816}
+--- !u!4 &328285816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328285814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,8 +352,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1071878611}
-  - component: {fileID: 1071878610}
   - component: {fileID: 1071878612}
+  - component: {fileID: 1071878610}
   m_Layer: 0
   m_Name: SceneRunner
   m_TagString: Untagged
@@ -326,11 +370,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071878609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dcf280b60214056adb81eaa7c14efe0, type: 3}
+  m_Script: {fileID: 11500000, guid: 30ff96d0868c457c9029756fae3b4309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SettingsInstaller: {fileID: 11400000, guid: 881d3b285304f7840932c4020c8a2648, type: 2}
-  m_SceneInstaller: {fileID: 1071878612}
+  m_ProductionPointSpawnPresenter: {fileID: 328285815}
 --- !u!4 &1071878611
 Transform:
   m_ObjectHideFlags: 0
@@ -354,6 +397,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071878609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ff96d0868c457c9029756fae3b4309, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dcf280b60214056adb81eaa7c14efe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SettingsInstaller: {fileID: 11400000, guid: 881d3b285304f7840932c4020c8a2648, type: 2}
+  m_SceneInstaller: {fileID: 1071878610}
