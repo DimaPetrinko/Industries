@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3e5fd90bc4d55911a631c47aa49a9, type: 3}
+  m_Name: WorldMapData
+  m_EditorClassIdentifier: 
+  m_ProductionPoints:
+  - m_BasicData: {fileID: 11400000, guid: d45d864bb5e343a409bc2ca61bcb8629, type: 2}
+    m_Jobs:
+    - m_Origin: {fileID: 11400000, guid: d45d864bb5e343a409bc2ca61bcb8629, type: 2}
+      m_Destination: {fileID: 11400000, guid: b06b95a33ef069a4c9981292b028ca21, type: 2}
+      m_Duration: 60
+      m_Reward: 228
+  - m_BasicData: {fileID: 11400000, guid: b06b95a33ef069a4c9981292b028ca21, type: 2}
+    m_Jobs:
+    - m_Origin: {fileID: 11400000, guid: b06b95a33ef069a4c9981292b028ca21, type: 2}
+      m_Destination: {fileID: 11400000, guid: d45d864bb5e343a409bc2ca61bcb8629, type: 2}
+      m_Duration: 60
+      m_Reward: 228
