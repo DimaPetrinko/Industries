@@ -9,12 +9,15 @@ namespace Industries.ApplicationManagement.Installers
 	{
 		public void Install()
 		{
-			ITestData testData = new TestData();
+			Repository.Instance.Store(new TestData());
 
-			Repository.Instance.Store(testData);
+			var testData = Repository.Instance.Get<ITestData>();
+			Debug.Log(testData.TestString);
+		}
 
-			var testData2 = Repository.Instance.Get<ITestData>();
-			Debug.Log(testData2.TestString);
+		public void Uninstall()
+		{
+			Repository.Instance.Remove<ITestData>();
 		}
 	}
 }

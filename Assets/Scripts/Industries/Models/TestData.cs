@@ -1,6 +1,8 @@
-﻿namespace Industries.Models
+﻿using Core.Models;
+
+namespace Industries.Models
 {
-	public interface ITestData
+	public interface ITestData : IData
 	{
 		public string TestString { get; }
 	}

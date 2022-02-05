@@ -13,5 +13,9 @@ namespace Industries.ApplicationManagement.Installers
 		public override void Install()
 		{
 		}
+
+		public override void Uninstall()
+		{
+		}
 	}
 }

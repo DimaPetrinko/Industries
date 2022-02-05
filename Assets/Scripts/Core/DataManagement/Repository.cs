@@ -24,17 +24,12 @@ namespace Core.DataManagement
 
 		public T Get<T>() where T : class
 		{
-			var targetType = typeof(T);
-			return (T)mStorage
-				.FirstOrDefault(p => SearchCondition(p.Key, targetType))
-				.Value;
+			return GetMany<T>().FirstOrDefault();
 		}
 
 		public IEnumerable<T> GetMany<T>() where T : class
 		{
-			var targetType = typeof(T);
-			return mStorage
-				.Where(p => SearchCondition(p.Key, targetType))
+			return GetManyPairs<T>()
 				.Select(p => p.Value)
 				.Cast<T>();
 		}
@@ -49,9 +44,55 @@ namespace Core.DataManagement
 			mStorage[type] = data;
 		}
 
-		private static bool SearchCondition(Type current, Type target)
+		public void Remove<T>() where T : class
 		{
-			return current == target || current.GetInterfaces().Contains(target);
+			var keyToRemove = GetManyPairs<T>()
+				.Select(p => p.Key)
+				.FirstOrDefault();
+			if (keyToRemove == null)
+			{
+				Debug.LogWarning($"Nothing to remove. Type {typeof(T)}");
+				return;
+			}
+
+			mStorage.Remove(keyToRemove);
+		}
+
+		public void RemoveAll<T>() where T : class
+		{
+			var keysToRemove = GetManyPairs<T>()
+				.Select(p => p.Key)
+				.ToArray();
+			if (keysToRemove.Length == 0)
+			{
+				Debug.LogWarning($"Nothing to remove. Type {typeof(T)}");
+				return;
+			}
+
+			foreach (var key in keysToRemove)
+			{
+				mStorage.Remove(key);
+			}
+		}
+
+		private IEnumerable<KeyValuePair<Type, object>> GetManyPairs<T>() where T : class
+		{
+			return mStorage
+				.Select(p => new
+				{
+					Comparison = SearchComparison(p.Key, typeof(T)),
+					Pair = p
+				})
+				.Where(r => r.Comparison > 0)
+				.OrderByDescending(r => r.Comparison)
+				.Select(p => p.Pair);
+		}
+
+		private static int SearchComparison(Type current, Type target)
+		{
+			if (current == target) return 2;
+			if (current.GetInterfaces().Contains(target)) return 1;
+			return 0;
 		}
 	}
 }
