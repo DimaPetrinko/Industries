@@ -24,4 +24,4 @@ MonoBehaviour:
     - m_Origin: {fileID: 11400000, guid: b06b95a33ef069a4c9981292b028ca21, type: 2}
       m_Destination: {fileID: 11400000, guid: d45d864bb5e343a409bc2ca61bcb8629, type: 2}
       m_Duration: 60
-      m_Reward: 228
+      m_Reward: 1448

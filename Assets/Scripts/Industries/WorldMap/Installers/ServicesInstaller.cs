@@ -8,12 +8,12 @@ namespace Industries.WorldMap.Installers
 	{
 		public void Install()
 		{
-			Repository.Instance.Store(new ProductionPointsSpawnService());
+			Repository.Instance.Store(new ProductionPointsService());
 		}
 
 		public void Uninstall()
 		{
-			Repository.Instance.Remove<ProductionPointsSpawnService>();
+			Repository.Instance.Remove<ProductionPointsService>();
 		}
 	}
 }
