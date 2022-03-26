@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.ApplicationManagement.Installers;
+using Core.Services;
 using UnityEngine;
 
 namespace Core.DataManagement
@@ -34,6 +36,11 @@ namespace Core.DataManagement
 			return GetManyPairs<T>()
 				.Select(p => p.Value)
 				.Cast<T>();
+		}
+
+		public IEnumerable<IService> GetAllNonRunningServices()
+		{
+			return GetMany<IService>().Where(s => !s.Running);
 		}
 
 		public void Store<T>(T data) where T : class
@@ -74,6 +81,28 @@ namespace Core.DataManagement
 			foreach (var key in keysToRemove)
 			{
 				mStorage.Remove(key);
+			}
+		}
+
+		public void ResolveAll()
+		{
+			foreach (var i in mStorage
+				.Values
+				.Select(o =>
+				{
+					return o switch
+					{
+						IInstallable installable => new[] {installable},
+						IEnumerable<IInstallable> installables => installables,
+						_ => null
+					};
+				})
+				.Where(i => i != null)
+				.SelectMany(i => i)
+				.Where(i => !i.Resolved))
+			{
+				i.Inject();
+				i.Resolved = true;
 			}
 		}
 
