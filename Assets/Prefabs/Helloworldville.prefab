@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5334740349127347644
+--- !u!1 &4356317050820228149
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9013840014420455655}
-  - component: {fileID: 6147314138261967515}
-  - component: {fileID: 5529469173719376658}
-  - component: {fileID: 6975764714017660932}
-  - component: {fileID: 3046044493669807086}
+  - component: {fileID: 823005273379277166}
+  - component: {fileID: 2536605143947242258}
+  - component: {fileID: 4233647228007488155}
+  - component: {fileID: 1635532752680524173}
   m_Layer: 0
-  m_Name: Helloworldville
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9013840014420455655
+--- !u!4 &823005273379277166
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5334740349127347644}
+  m_GameObject: {fileID: 4356317050820228149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 8221714914634503636}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6147314138261967515
+--- !u!33 &2536605143947242258
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5334740349127347644}
+  m_GameObject: {fileID: 4356317050820228149}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5529469173719376658
+--- !u!23 &4233647228007488155
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5334740349127347644}
+  m_GameObject: {fileID: 4356317050820228149}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -83,29 +82,54 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6975764714017660932
+--- !u!65 &1635532752680524173
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5334740349127347644}
+  m_GameObject: {fileID: 4356317050820228149}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3046044493669807086
-MonoBehaviour:
+--- !u!1001 &8389133527095829390
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 465373078039295578, guid: 73a76bfda99e7e543bf50b330c33eaee, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465373078039295578, guid: 73a76bfda99e7e543bf50b330c33eaee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465373078039295578, guid: 73a76bfda99e7e543bf50b330c33eaee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 465373078039295578, guid: 73a76bfda99e7e543bf50b330c33eaee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459906061444205211, guid: 73a76bfda99e7e543bf50b330c33eaee, type: 3}
+      propertyPath: m_Name
+      value: Helloworldville
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073854344011333873, guid: 73a76bfda99e7e543bf50b330c33eaee, type: 3}
+      propertyPath: m_Id
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73a76bfda99e7e543bf50b330c33eaee, type: 3}
+--- !u!4 &8221714914634503636 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 465373078039295578, guid: 73a76bfda99e7e543bf50b330c33eaee, type: 3}
+  m_PrefabInstance: {fileID: 8389133527095829390}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5334740349127347644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08c906ed6e704ca48f8c3f53006ee8ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Id: 0
